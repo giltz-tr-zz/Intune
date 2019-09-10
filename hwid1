@@ -1,5 +1,9 @@
+#version 1
 md c:\\HWID
 Set-Location c:\\HWID
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -force
 Install-Script -Name Get-WindowsAutoPilotInfo
 Get-WindowsAutoPilotInfo.ps1 -OutputFile AutoPilotHWID.csv
+
+#version 2
+Upload-WindowsAutopilotDeviceInfo.ps1 -TenantName "globaltrad.onmicrosoft.com" -OrderIdentifier "AADUserDriven" -Verbose
